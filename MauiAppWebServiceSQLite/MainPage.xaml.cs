@@ -1,4 +1,6 @@
-﻿namespace MauiAppWebServiceSQLite
+﻿using System.Diagnostics;
+
+namespace MauiAppWebServiceSQLite
 {
     public partial class MainPage : ContentPage
     {
@@ -9,16 +11,13 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        /*
+           -    Metodo para caputarar campo input cidade.
+        */
+        private void Button_Clicked(object sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            string cidade = inputCidade.Text;
+            lbl_previsao.Text = cidade;
         }
     }
 
