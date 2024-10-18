@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 
 namespace MauiAppWebServiceSQLite.Models
 {
-    internal class Tempo
+    public class Tempo
     {
         public string? Title { get; set; }
         public string? Temperature { get; set; }

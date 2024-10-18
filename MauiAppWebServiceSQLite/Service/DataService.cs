@@ -14,10 +14,13 @@ namespace MauiAppWebServiceSQLite.Service
             
             Pelo que li, o compilador esta assumindo que o metodo e internal.
             Germini me sugeriu uma ganbiarra que talves funcione, 
-            criar uma funcao publica que chama a privada
+            criar uma funcao publica que chama a privada.
+            ----------------------------------------------------------------------------------------------
+            18/10/2024 02:08 - Depois de ler mil e uma vez o mesmo erro e chat não me dar um solução
+            decobri que... minha class Tempo estava como internal ou seja nunca eu ia conseguir as funções.
         */
 
-        private static async Task<Tempo?> BucarPrevisao(string cidade)
+        public static async Task<Tempo?> BucarPrevisao(string cidade)
         {
 
             string appId = "6135072afe7f6cec1537d5cb08a5a1a2";
