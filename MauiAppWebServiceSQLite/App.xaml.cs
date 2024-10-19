@@ -21,7 +21,7 @@ namespace MauiAppWebServiceSQLite
                     string path = Path.Combine(
                         Environment.GetFolderPath(
                             Environment.SpecialFolder.LocalApplicationData
-                        ), "arquivo.db3"
+                        ), "slqite.db3"
                     );
 
                     database = new SQLiteDataBaseHelper(path);

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MauiAppWebServiceSQLite.Views.ListaPrevisoes" Title="ListaPrevisoes">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar x:Name="txt_src" Margin="10" Placeholder="Buscar um data." TextChanged="txt_src_TextChanged" />
+
+            <ListView x:Name="lst_previsoes" >
+                <ListView.Header>
+                    <Grid ColumnDefinitions="*, *, *, *">
+                        <Label Grid.Column="0" Text="Titulo" />
+                        <Label Grid.Column="1" Text="Temperatura" />
+                        <Label Grid.Column="2" Text="Previsão" />
+                        <Label Grid.Column="3" Text="Data" />
+                    </Grid>
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnDefinitions="*, *, *, *">
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Title}" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Temperature}" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Weather}" />
+                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding srcDate}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

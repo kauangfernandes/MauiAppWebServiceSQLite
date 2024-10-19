@@ -3,6 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppWebServiceSQLite.MainPage">
 
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ir para lista de previsões salvas" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+
     <ScrollView>
         <VerticalStackLayout Padding="30,0" Spacing="25">
             <Label Text="Cidade: " />
@@ -14,5 +26,5 @@
 
         </VerticalStackLayout>
     </ScrollView>
-
+    
 </ContentPage>

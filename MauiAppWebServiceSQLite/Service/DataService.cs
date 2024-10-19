@@ -22,7 +22,6 @@ namespace MauiAppWebServiceSQLite.Service
 
         public static async Task<Tempo?> BucarPrevisao(string cidade)
         {
-
             string appId = "6135072afe7f6cec1537d5cb08a5a1a2";
             string url = $"http://api.openweathermap.org/data/2.5/weather?q={cidade}&units=metric&appid={appId}";
 

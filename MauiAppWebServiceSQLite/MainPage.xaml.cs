@@ -2,6 +2,7 @@
 using MauiAppWebServiceSQLite.Models;
 using MauiAppWebServiceSQLite.Service;
 using MauiAppWebServiceSQLite.Helpers;
+using System.Collections.ObjectModel;
 
 namespace MauiAppWebServiceSQLite
 {
@@ -9,8 +10,9 @@ namespace MauiAppWebServiceSQLite
     {
         CancellationTokenSource _cancelTokenSource;
         bool _isCheckingLocation;
-
         string? cidade;
+
+        ObservableCollection<Tempo> _previsoesList = new ObservableCollection<Tempo>();
 
         public MainPage()
         {
@@ -20,6 +22,7 @@ namespace MauiAppWebServiceSQLite
         /*
            -    Metodo para caputarar campo input cidade.
         */
+
         private async void Button_Clicked(object sender, EventArgs e)
         {
             string cidade = inputCidade.Text;
@@ -90,6 +93,11 @@ namespace MauiAppWebServiceSQLite
             await App.Database.Insert(tempo);
             await DisplayAlert("Sucesso!", "Previsão inserido com sucesso", "OK");
 
+        }
+
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Views.ListaPrevisoes());
         }
     }
 
